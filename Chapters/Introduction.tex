@@ -1,0 +1,22 @@
+\chapter{Introduction}
+
+Innovations in Artificial Intelligence (AI) have progressed at rapid pace over the last decade, with AI systems often matching or surpassing that of human capability. The complexity of systems deployed in both public and private domains is increasing exponentially, and their use is progressively becoming interwoven within our everyday lives. Their ubiquity extends from from virtual assistants and smart speakers, to more common, yet often overlooked applications such as facial recognition, digital photo-tagging, and recommendation engines.
+
+Despite advancements in new AI technologies, from convolutional neural networks (CNNs) to generative artificial intelligence (GAI), such as large language models (LLMs), there is an insufficient availability of easily accessible and effective tools for interpreting or explaining the decisions made by these models. This lack of interpretabilty and explainability reduces one's ability to hold an AI system and its outputs accountable, increasing the risk for misuse in fraudulent activities or the spreading of deepfakes. Furthermore, a resultant reduction in trust can lead to the potential underutilisation by experts for whom require justifications for making critical decisions, such as medical diagnosis. 
+
+As a result of the numerous concerns posed, research in the field of Explainable Artificial Intelligence (XAI) has become imperative, and in some instances, mandatory in certain domains, driven by the enaction of new legislation by governing bodies across the world (\cite{worldeconomicforumPresidioRecommendationsResponsible2023}, \cite{goodmanEuropeanUnionRegulations2017a}).
+
+This project poses a new methodology for assessing and improving upon a specific form of XAI, that of \emph{sequential} concept bottleneck models (CBMs). Typically, concept bottleneck models are developed through the incorporation of expert concepts into a supervised learning AI model, from which they firstly produce a set of predicted interpretable features/concepts that are subsequently used for the task of predicting an outcome/classification.
+
+The research undertaken in this project builds upon the model proposed by Grange et al. \cite{grangeXAISelfexplanatoryAI2022}, of which I was one of the co-authors. The model developed in the paper is designed with the intention of being inherently interpretable and self-explanatory, inspired and informed by a vast body of psychological research on categorisation theory, in particular that of Nosofsky et al. whose dataset \cite{nosofskyDevelopmentFeaturespaceRepresentation2018} underpins the work.
+
+There were a number of limitations and questions left unanswered in the paper, such as the relationship between the concept features used, how they are interpreted and used for classification, and the effect they have upon accuracy. Incidentally one was left contemplating if, due relatively small gap in classification accuracy between the proposed self-explanatory model and that of a black-box model (i.e. one which is natively uninterpretable), if this gap could be closed through further research.
+
+
+\section{Aims and Objectives}
+
+Subsequently, the primary aim of this project was to build upon and enhance Grange et al.'s self-explanatory XAI model \cite{grangeXAISelfexplanatoryAI2022}, with the intention of improving classification accuracy to match or surpass that of a black-box model, whilst preserving the capacity to predict expert-intelligible features. This endeavour aimed to  further deepen upon the mutual understanding of human and AI feature abstractions.
+
+To meet this aim, the first objective involved the development of an additional network classifier layer, of which could provide some degree of flexibility for the network to continue learning. Once completed, the evaluation of classification accuracy and concept alignment could be explored through the analysis of results using three primary research methods: manipulation of network training variables, removal of a single weakly aligned feature value from the training data, and alteration of a single feature/concept to binary or continuous/scalar in the training data.
+
+Meeting these requirements, necessitates the development of tools to expedite data analysis, such as automation and data visualisation, enabling a deeper understanding of the effects of the proposed research methods.

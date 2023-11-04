@@ -1,0 +1,196 @@
+\documentclass[12pt, oneside, openany]{report}
+%\usepackage{IEEEtrantools}
+
+\usepackage[lmargin=2cm, rmargin=2cm, tmargin=2cm, bmargin=2.5cm, footnotesep=2cm, footskip=1cm]{geometry}
+\linespread{1.5}
+\usepackage{hyperref}
+\usepackage{mathptmx}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[utf8x]{inputenc}
+\usepackage[english]{babel}
+\usepackage[
+    backend=biber,
+    style=ieee,
+    backref=true,
+    isbn=false,
+    isbn=false,
+    natbib=true,
+    defernumbers=true
+    ]{biblatex}
+\usepackage[section]{placeins}
+\usepackage[parfill = 20pt]{parskip}
+
+\DeclareBibliographyCategory{cited}
+\AtEveryCitekey{\addtocategory{cited}{\thefield{entrykey}}}
+%\usepackage{filecontents}
+\addbibresource{references.bib}
+\nocite{*}
+
+\AtEveryBibitem{
+    \clearfield{urlyear}
+    \clearfield{urlmonth}
+}
+\usepackage{float}
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+%\usepackage[style=authoryear, defernumbers=true, backend=biber,dashed=false, maxnames=999,maxcitenames=2,giveninits=true,urldate=long,uniquename=false,uniquelist=false
+%]{biblatex}
+
+
+
+%\addbibresource{biblio.bib}
+
+%% pretty captions
+\usepackage{caption}
+\usepackage{subcaption}
+%%% allows you to create Rules, Definitions, Lemmas, Theorems etc.
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[]{algorithm2e}
+\usepackage{tcolorbox}
+\usepackage{minted}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{Rule}{Rule}
+\numberwithin{definition}{chapter}
+\numberwithin{theorem}{chapter}  
+\numberwithin{lemma}{chapter}  
+\numberwithin{Rule}{chapter}  
+\numberwithin{equation}{chapter} 
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\usepackage[super]{nth} 
+ 
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{placeins}
+\usepackage{pdfpages}
+\usepackage{attachfile2}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{jupynotex}
+\usepackage{pdfpages,caption}
+\usepackage{blindtext}
+\usepackage{lastpage}
+
+\setlength{\headheight}{15pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead{}
+\fancyhead[R]{\nouppercase{\leftmark\hfill\rightmark}}
+\renewcommand{\headrulewidth}{0.1pt}
+\fancyfoot{}
+\renewcommand{\footrulewidth}{0.1pt}
+\fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot{}%
+  \fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}%
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0.1pt}% Line at the footer visible
+  }
+
+%\renewcommand{\footrulewidth}{0.4pt}
+%\fancyhead{}
+%\fancyhead[L]{SHORTENED TITLE} %%% CHANGE AS APPROPRIATE (you may need to use a shortened form of the title)
+%\fancyhead[R]{Student ID: .......} %%% CHANGE AS APPROPRIATE
+
+%\usepackage[compact]{titlesec}
+%\titlespacing{\chapter}{0pt}{*3}{*2.5}
+
+\usepackage[compact, raggedright]{titlesec}
+\titlespacing{\chapter}{0pt}{0pt}{2pt}
+\titlespacing{\section}{0pt}{10pt}{2pt}
+\titlespacing{\subsection}{0pt}{20pt}{5pt}
+%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+%\titlespacing*{〈command 〉}{〈left〉}{〈before-sep〉}{〈after-sep〉}[〈right-sep〉]
+
+\titleformat{\chapter}{\normalfont\huge\bf}{\thechapter}{20pt}{\huge\bf}
+%% prevents Chapter 1 (then new line and Introduction) - turns into 1. Introduction
+
+%% Call your references "References" rather than Bibliography, then also allow for a separate Bibliography if needed.
+
+%\DeclareSourcemap{
+ % \maps[datatype=bibtex]{
+  %  \map{
+   %   \perdatasource{references.bib}
+    %  \step[fieldset=keywords, fieldvalue={, primary}, append]
+    %}
+    %\map{
+    %  \perdatasource{biblio.bib}
+    %  \step[fieldset=keywords, fieldvalue={, secondary}, append]
+    %}
+  %}
+%}
+%\input{formatting}
+\setcounter{tocdepth}{2} % allow only sections (not subsections in table of contents)
+
+\begin{document}
+\addtolength{\topmargin}{-20pt}
+\input{Chapters/titlepage}
+\input{Chapters/declaration}
+\input{Chapters/acknowledgements}
+{\pagestyle{plain}
+\tableofcontents
+\cleardoublepage}
+{\pagestyle{plain}
+\listoftables
+\cleardoublepage}
+%\addtocontents{toc}{~\hfill\textbf{Page}\par} % comment this line out if you want to remove "Page"
+\setlength{\headheight}{40pt}
+\input{Chapters/Introduction}% standard chapter format
+\input{Chapters/LitteratureReview.tex}
+\input{Chapters/ApproachMethodologyResults.tex}
+\input{Chapters/Analysis}
+\input{Chapters/Conclusions}
+\input{Chapters/Reflection}
+\input{Chapters/appendix}  
+\printbibliography[category=cited, heading=bibintoc, title={References}]
+\printbibliography[notcategory=cited, heading=bibintoc, resetnumbers=true, title={Further Reading}]
+%\addcontentsline{toc}{chapter}{References}
+
+%% uncomment next line if you want a Bibliography section also!
+%\printbibliography[keyword=secondary,title=Bibliography]\addcontentsline{toc}{chapter}{Bibliography}
+\end{document}

@@ -1,0 +1,30 @@
+\chapter{Analysis}
+
+To gain further insight as to what was happening with regards to the validity of the concepts I undertook some analysis of the importance of the weights, looking at L2 regularisation. The results below indicate towards a clearer lack of complexity for the network to understand the importance of feature concepts i.e. due to the hybrid network having lower weights (closer to 0) so prevents some over fitting is prevented perhaps. Further granular analysis of this scan be viewed in the appendix (\ref{Weights and calculated L2 regularisation values from a single run of a validation set (Images 1,2,3). Sequential CBM, 13 Features and binary rated crystals}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lll@{}}
+                      & \multicolumn{1}{c}{\cellcolor[HTML]{DDEBF7}\textbf{sCBM}} & \multicolumn{1}{c}{\cellcolor[HTML]{E2EFDA}\textbf{Hybrid}} \\
+\textbf{All Concepts} & \multicolumn{1}{c}{\textbf{Sum L2}}                       & \multicolumn{1}{c}{\textbf{Sum L2}}                         \\
+\rowcolor[HTML]{F2F2F2} 
+\textbf{Granite}      & 6.0152  & 5.9691  \\
+\textbf{Obsidian}     & 2.5668  & 1.5327  \\
+\rowcolor[HTML]{F2F2F2} 
+\textbf{Pegmatite}    & 14.0439 & 10.8745 \\
+\textbf{Pumice}       & 12.7726 & 8.2170  \\
+\rowcolor[HTML]{F2F2F2} 
+\textbf{Gneiss}       & 12.2029 & 9.6233  \\
+\textbf{Marble}       & 19.6444 & 15.0057 \\
+\rowcolor[HTML]{F2F2F2} 
+\textbf{Slate}        & 18.1869 & 12.0342 \\
+\textbf{Breccia}      & 9.0980  & 7.0099  \\
+\rowcolor[HTML]{F2F2F2} 
+\textbf{Conglomerate} & 7.7457  & 6.1521  \\
+\textbf{Sandstone}    & 11.0264 & 8.7511  \\
+\rowcolor[HTML]{FFF2CC} 
+\textbf{Total L2}     & \textbf{113.3028}                                         & \textbf{85.1696}                                           
+\end{tabular}
+\\
+\caption{Analysing the complexity of concepts between the sequential CBM and Hybrid Classifier CBM using summed L2 values for all concepts.  Data from a single run of a validation set (Images 1,2,3)}
+\end{table}
